@@ -1,0 +1,21 @@
+dataset:
+  root: /path/to/yolo_dataset
+  train: images/train
+  val: images/val
+  test: images/test
+  generated_data_yaml: models/landmark/generated_data.yaml
+  names: {0: left, 1: right, 2: turnaround, 3: park, 4: person, 5: obstacle, 6: crosswalk}
+yolov5:
+  dir: external/yolov5
+  weights: yolov5s.pt
+train:
+  img_size: 640
+  batch_size: 16
+  epochs: 120
+  workers: 4
+  device: "0"
+  project: models/landmark/runs
+  name: incremental_v3
+  patience: 30
+  seed: 42
+

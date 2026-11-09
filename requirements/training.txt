@@ -1,0 +1,8 @@
+-r runtime.txt
+torch>=2.0
+torchvision>=0.15
+onnx>=1.14
+pandas>=1.5
+matplotlib>=3.7
+tqdm>=4.65
+

@@ -1,0 +1,44 @@
+camera:
+  source: /dev/video0
+  width: 1280
+  height: 720
+  fps: 30
+
+models:
+  backend: onnx       # onnx for CPU tests, om for Atlas deployment
+  device_id: 0
+  lane:
+    width: 512
+    height: 256
+    min_pixels: 80
+    onnx_path: models/lane/lanenet_hnet_finetune_unified_best.onnx
+    om_path: models/lane/lanenet_hnet_finetune_unified_310b1.om
+  yolo:
+    size: 640
+    confidence: 0.35
+    iou: 0.45
+    classes: [left, right, turnaround, park, person, obstacle, crosswalk]
+    onnx_path: models/landmark/yolov5_incremental_v3_best.onnx
+    om_path: models/landmark/yolov5_incremental_v3_310b1.om
+
+decision:
+  lane_timeout_s: 0.30
+  detection_timeout_s: 0.50
+  detection_confidence: 0.35
+  action_cooldown_s: 2.0
+  normal_rpm: 80
+  crawl_rpm: 35
+  turn_rpm: 70
+  action_durations_s:
+    turn_left: 0.55
+    turn_right: 0.55
+    turnaround: 1.10
+    park: 1.20
+
+chassis:
+  port: /dev/ttyUSB0
+  baudrate: 115200
+  timeout_s: 0.30
+  motor_signs: [-1, -1, 1, 1]
+  servo_angles: [110, 90]
+

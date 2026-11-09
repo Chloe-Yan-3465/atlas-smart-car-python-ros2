@@ -1,0 +1,4 @@
+-r runtime.txt
+onnxruntime>=1.16
+pytest>=7.4
+

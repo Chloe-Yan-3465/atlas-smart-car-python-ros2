@@ -1,0 +1,7 @@
+# Install the repository first: python3 -m pip install -e ..
+# ROS packages (rclpy, cv_bridge, launch) come from ROS 2 Humble/apt.
+numpy>=1.23,<2.0
+opencv-python>=4.7,<4.12
+PyYAML>=6.0
+pyserial>=3.5
+

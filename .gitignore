@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+.pio/
+build/
+install/
+log/
+outputs/
+runs/
+*.log
+config/local.yaml
+
